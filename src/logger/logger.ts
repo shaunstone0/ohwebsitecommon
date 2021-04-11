@@ -5,10 +5,10 @@ import pino, { DestinationStream } from 'pino';
 
 import pad from './logger-utils';
 
-const logFileSuffix = 'log-middleware';
+const logFileSuffix = 'log-backend';
 
-if (!fs.existsSync('../../log')) {
-    fs.mkdirSync('../../log');
+if (!fs.existsSync(`${__dirname}/log`)) {
+    fs.mkdirSync(`${__dirname}/log`);
 }
 
 const now = new Date();
