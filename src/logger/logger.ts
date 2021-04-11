@@ -17,7 +17,9 @@ const logFile = `${logFileSuffix}_${now.getFullYear()}${pad(now.getMonth() + 1)}
 
 const logStreamConsole: DestinationStream =
     pino.destination(1)
-// pino.destination(`../../log/${logFile}`);
+
+const logStreamFile: DestinationStream =
+    pino.destination(`${__dirname}/log/${logFile}`);
 
 export const Logger = pino(
     {
