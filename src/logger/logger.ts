@@ -18,7 +18,7 @@ const logFile = `${logFileSuffix}_${now.getFullYear()}${pad(now.getMonth() + 1)}
 const logStream: DestinationStream =
     process.env.DEBUG_OUTPUT === 'true' ? pino.destination(1) : pino.destination(`../../log/${logFile}`);
 
-const Logger = pino(
+export const Logger = pino(
     {
         prettyPrint: true,
         name: process.env.APP_ID,
@@ -27,4 +27,3 @@ const Logger = pino(
     logStream,
 );
 
-export default Logger;
