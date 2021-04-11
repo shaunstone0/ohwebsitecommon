@@ -21,8 +21,6 @@ const logStream: DestinationStream =
 export const Logger = pino(
     {
         prettyPrint: true,
-        name: process.env.APP_ID,
-        level: process.env.LOG_LEVEL,
     },
     logStream,
 );
