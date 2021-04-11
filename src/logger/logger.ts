@@ -21,6 +21,7 @@ const logStream: DestinationStream =
 export const Logger = pino(
     {
         prettyPrint: true,
+        level: 'trace',
     },
     logStream,
 );
