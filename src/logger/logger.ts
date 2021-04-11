@@ -15,14 +15,15 @@ const now = new Date();
 
 const logFile = `${logFileSuffix}_${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}.log`;
 
-const logStream: DestinationStream =
-    process.env.DEBUG_OUTPUT === 'true' ? pino.destination(1) : pino.destination(`../../log/${logFile}`);
+const logStreamConsole: DestinationStream =
+    pino.destination(1)
+// pino.destination(`../../log/${logFile}`);
 
 export const Logger = pino(
     {
         prettyPrint: true,
         level: 'trace',
     },
-    logStream,
+    logStreamConsole,
 );
 
