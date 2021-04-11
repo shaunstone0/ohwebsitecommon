@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import luxon from 'luxon';
 import pino, { DestinationStream } from 'pino';
 
-import pad from './utils/logger-utils';
+import pad from './logger-utils';
 
 const logFileSuffix = 'log-middleware';
 
